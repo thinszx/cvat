@@ -10,5 +10,5 @@ volumes:
   cvat_share:
     driver_opts:
       type: none
-      device: /volume1/LabData/manual_annotation
+      device: /volume1/LabData/manual_annotation,rw
       o: bind
