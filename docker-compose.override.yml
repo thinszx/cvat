@@ -9,6 +9,6 @@ services:
 volumes:
   cvat_share:
     driver_opts:
-      type: "nfs4"
-      o: "addr=192.168.50.224,rw"
-      device: ":/LabData/manual_annotation"
+      type: btrfs
+      o: bind
+      device: /volume1/LabData/manual_annotation
