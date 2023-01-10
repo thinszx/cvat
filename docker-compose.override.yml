@@ -9,6 +9,6 @@ services:
 volumes:
   cvat_share:
     driver_opts:
-      type: btrfs
-      o: bind
-      device: /volume1/LabData/manual_annotation
+      type: cifs
+      o: addr=127.0.0.1,username=cvat,password=cvat,file_mode=0777,dir_mode=0777
+      device: //127.0.0.1/cvat
