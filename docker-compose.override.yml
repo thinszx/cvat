@@ -1,14 +1,14 @@
 services:
   cvat_server:
     volumes:
-      - cvat_share:/home/django/share:ro
+      - cvat_share:/home/django/share:rw
   cvat_worker_default:
     volumes:
-      - cvat_share:/home/django/share:ro
+      - cvat_share:/home/django/share:rw
 
 volumes:
   cvat_share:
     driver_opts:
-      type: cifs
-      o: addr=127.0.0.1,username=cvat,password=cvat,file_mode=0777,dir_mode=0777
-      device: //127.0.0.1/cvat
+      type: none
+      o: bind,file_mode=0777,dir_mode=0777
+      device: /volume1/cvat
